@@ -8,11 +8,12 @@ import CategoryDropDown from './components/SecondPage';
 import {  Routes, Route, Link } from 'react-router-dom';
 import PersonalArea from './components/PersonalArea';
 import AddNewGemach from './components/AddNewGemach'
+import AddNewGmach2 from './components/AddNewGmach2'
 import Some from './components/Some'
 import Loading from './components/Loading'
 // import Form from './components/Form'
 // import 'Secondtest.css'
-import Test from './components/Test'
+//import Test from './components/Test'
 function App() {
   
   return (
@@ -29,7 +30,7 @@ function App() {
           <Route path={'.logo'} element={<MainPageComp />} />
           <Route path={'/SecondPage'} element={<CategoryDropDown/>} />
           <Route path={'/PersonalArea'} element={<PersonalArea />} />
-          <Route path={'/AddNewGemach'} element={<AddNewGemach />} />
+          <Route path={'/AddNewGmach2'} element={<AddNewGmach2/>} />
 
 
         </Routes>
