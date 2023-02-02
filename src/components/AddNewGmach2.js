@@ -27,26 +27,27 @@ export const FormikFormDemo = () => {
   //  const [citiesnames, setCitiesnames] = useState([]);
     const [showMessage, setShowMessage] = useState(false);
     const [formData, setFormData] = useState({});
-    const [namelogin,setNamelogin]=useState({});
-    const [phonelogin,setPhonelogin]=useState({});
+    const [name,setName]=useState({});
+    const [phone,setPhone]=useState({});
+
     const utilsService = new UtilsService();
 
   //  const dispatch = useDispatch();
-    const setName=(e)=>{
+    const setNamelogin=(e)=>{
         
-        setNamelogin(e.target.value);
+        setName(e.target.value);
        console.log("gggggg",e.target.value);
     //   dispatch({ type :  "USERNAME" ,payload: namelogin})
     }
-    const setPhone=(e)=>{
-        setPhonelogin(e.target.value);
+    const setPhoneLogin=(e)=>{
+        setPhone(e.target.value);
         console.log("ppppppppp",e.target.value);
 
     }
-   console.log(namelogin);
+   console.log(name);
    const submit= () =>{
-    const inputs = {namelogin,phonelogin};
-    utilsService.additem("http://localhost:8000/api/products/",inputs);
+    const inputs = {name,phone};
+    utilsService.additem("http://localhost:8000/api/products",inputs);
    }
     
     //const countryservice = new CountryService();
@@ -140,7 +141,7 @@ export const FormikFormDemo = () => {
                     <form onSubmit={formik.handleSubmit} className="p-fluid">
                         <div className="field">
                             <span className="p-float-label">
-                                <InputText id="name" name="name" value={formik.values.name}  onChange={e => { formik.handleChange(e); setName(e)} }autoFocus className={classNames({ 'p-invalid': isFormFieldValid('name') })} />
+                                <InputText id="name" name="name" value={formik.values.name}  onChange={e => { formik.handleChange(e); setNamelogin(e)} }autoFocus className={classNames({ 'p-invalid': isFormFieldValid('name') })} />
                                 <label htmlFor="name" className={classNames({ 'p-error': isFormFieldValid('name') })}>Product Name*</label>
                             </span>
                             {getFormErrorMessage('name')}
@@ -156,7 +157,7 @@ export const FormikFormDemo = () => {
                         <div className="field">
                             <span className="p-float-label p-input-icon-right">
                             <i className="pi pi-phone" />
-                                <InputText id="phone" name="phone" value={formik.values.password} onChange={e => { formik.handleChange(e); setPhone(e)}} toggleMask
+                                <InputText id="phone" name="phone" value={formik.values.password} onChange={e => { formik.handleChange(e); setPhoneLogin(e)}} toggleMask
                                     className={classNames({ 'p-invalid': isFormFieldValid('phone') })}  />
                                 <label htmlFor="phone" className={classNames({ 'p-error': isFormFieldValid('phone') })}>Phone*</label>
                             </span>

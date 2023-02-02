@@ -18,21 +18,24 @@ export default class UtilsService {
     }*/
 
     additem(url,body){
-        console.log("body", body);
-        return axios.post(`${url}/${body}`).then(res => res.data);
+        console.log("bodyyyy",body);
+        return axios.post(`${url}`,body).then(res => res.data);
         console.log("after");
         alert("add");
     
     }
-    createItem(url,obj) {
-        console.log(obj);
-           return  axios.post(`${url}`, obj).then(res => res.data); 
-         
-       }
+  
+   
+ 
    /* createItem = (url,obj) =>
     {
     return axios.post(url,obj).then(res=>res.data);
     }*/
+  createItem(url,obj) {
+        console.log(obj);
+           return  axios.post(`${url}`, obj).then(res => res.data); 
+         
+       }
 }
 
     
