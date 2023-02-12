@@ -11,7 +11,7 @@ const PersonalArea = ()=>
 
 {
 	const utilsService = new UtilsService();
-	 const delete1= () => {utilsService.deleteItem("http://localhost:8000/api/products","6356ec7714460ce520baf4f6");
+	 const delete1= () => {utilsService.deleteItem("http://localhost:8000/api/products","63decccfb445bb223e9bea19");
 	alert("del");}
 	// const delete1=()=>{alert("hhhhhh");}
     return(

@@ -74,7 +74,7 @@ export default function CategoryDropDown() {
 
   const createRows = (data) => {
     const a = data.map((i, key) => {
-      return { id: key, category: i.category, name: i.name, city: i.city }
+      return { id: key, category: i.category, name: i.name, city: i.city , street: i.street, phone:i.phone, description: i.description}
     })
     setRows(a);
     console.log('a', a)
@@ -85,6 +85,12 @@ export default function CategoryDropDown() {
     { field: 'category', headerName: 'Category', width: 150 },
     { field: 'name', headerName: 'Product name', width: 150 },
     { field: 'city', headerName: 'City', width: 150 },
+    { field: 'street', headerName: 'Street', width: 150 },
+    { field: 'phone', headerName: 'Phone', width: 150 },
+    { field: 'description', headerName: 'Description', width: 150 },
+
+
+
   ];
   const changeRow = () => {
     console.log('products', products)

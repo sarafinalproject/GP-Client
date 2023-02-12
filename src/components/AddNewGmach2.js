@@ -47,7 +47,8 @@ export const FormikFormDemo = () => {
    console.log(name);
    const submit= () =>{
     const inputs = {name,phone};
-    utilsService.additem("http://localhost:8000/api/products",inputs);
+    console.log('from___',formData)
+    utilsService.additem("http://localhost:8000/api/products",formData);
    }
     
     //const countryservice = new CountryService();
@@ -97,8 +98,9 @@ export const FormikFormDemo = () => {
         },
         onSubmit: (data) => {
             setFormData(data);
+            console.log('data_____',data)
             setShowMessage(true);
-
+            utilsService.additem("http://localhost:8000/api/products",data);
             formik.resetForm();
         }
     });
@@ -177,7 +179,7 @@ export const FormikFormDemo = () => {
                             <label htmlFor="accept" className={classNames({ 'p-error': isFormFieldValid('accept') })}>I agree to the terms and conditions*</label>
                         </div>
 
-                        <Button type="submit" label="Submit" className="mt-2" onClick={submit}/>
+                        <Button type="submit" label="Submit" className="mt-2"/>
                     </form>
                 </div>
             </div>
